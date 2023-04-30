@@ -60,5 +60,9 @@ return require('packer').startup(function(use)
     }
     use "terrortylor/nvim-comment"
 
+    use "kdheepak/lazygit.nvim"
+
+    use 'kkvh/vim-docker-tools'
+
 end)
 
