@@ -8,7 +8,26 @@ local lsp = require('lsp-zero').preset({
 -- (Optional) Configure lua language server for neovim
 lsp.nvim_workspace()
 
+
+-- go to definition
+lsp.on_attach(function(client, bufnr)
+	local opts = {buffer = bufnr, remap = false}
+	vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+end)
+
 lsp.setup()
+
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+	vim.lsp.diagnostic.on_publish_diagnostics, {
+		signs = false,
+		virtual_text = true,
+		underline = false,
+	}
+)
+
+require("nvim_comment").setup({
+	operator_mapping = "<leader>/"
+})
 
 
 -- golang
