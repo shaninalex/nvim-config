@@ -42,7 +42,7 @@ return require('packer').startup(function(use)
             {'rafamadriz/friendly-snippets'}, -- Optional
         }
     }
-    
+
     -- golang support
     use 'ray-x/go.nvim'
 
@@ -50,9 +50,13 @@ return require('packer').startup(function(use)
 
     -- lsp-config
     use 'neovim/nvim-lspconfig'
-    
 
     -- toggle term
     use {'akinsho/toggleterm.nvim', tag = '*' }
+
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
 end)
 
