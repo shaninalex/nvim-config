@@ -14,12 +14,12 @@ return require('packer').startup(function(use)
 
     -- theme
     -- 6. Base16 family
-    use { "rose-pine/neovim" }
+    -- use { "rose-pine/neovim" }
     use { "ellisonleao/gruvbox.nvim" }
 
 
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
-    use('tpope/vim-fugitive')
+    -- use('tpope/vim-fugitive')
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v1.x',
@@ -53,7 +53,7 @@ return require('packer').startup(function(use)
     use 'neovim/nvim-lspconfig'
 
     -- toggle term
-    use { 'akinsho/toggleterm.nvim', tag = '*' }
+    -- use { 'akinsho/toggleterm.nvim', tag = '*' }
 
     use {
         "windwp/nvim-autopairs",
@@ -63,5 +63,5 @@ return require('packer').startup(function(use)
 
     use "kdheepak/lazygit.nvim"
 
-    use 'kkvh/vim-docker-tools'
+    -- use 'kkvh/vim-docker-tools'
 end)
