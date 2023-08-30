@@ -63,5 +63,6 @@ return require('packer').startup(function(use)
 
     use "kdheepak/lazygit.nvim"
 
+    use "lukas-reineke/indent-blankline.nvim"
     -- use 'kkvh/vim-docker-tools'
 end)

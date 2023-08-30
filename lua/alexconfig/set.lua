@@ -26,7 +26,7 @@ vim.opt.scrolloff = 8
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
--- vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "80"
 
 vim.g.mapleader = " "
 
@@ -34,3 +34,7 @@ vim.g.mapleader = " "
 -- tabs
 vim.opt.tabpagemax = 15
 vim.opt.showtabline = 2
+
+vim.opt.cursorline = true
+-- vim.opt.listchars = tab:\|\ 
+-- vim.opt.list = true
