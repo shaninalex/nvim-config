@@ -16,6 +16,7 @@ return require('packer').startup(function(use)
     -- 6. Base16 family
     -- use { "rose-pine/neovim" }
     use { "ellisonleao/gruvbox.nvim" }
+    use { "catppuccin/nvim", as = "catppuccin" }
 
 
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
