@@ -15,8 +15,8 @@ return require('packer').startup(function(use)
     -- theme
     -- 6. Base16 family
     -- use { "rose-pine/neovim" }
-    use { "ellisonleao/gruvbox.nvim" }
-    -- use { "catppuccin/nvim", as = "catppuccin" }
+    -- use { "ellisonleao/gruvbox.nvim" }
+    use { "catppuccin/nvim", as = "catppuccin" }
 
 
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
@@ -47,7 +47,6 @@ return require('packer').startup(function(use)
 
     -- golang support
     use 'ray-x/go.nvim'
-
     use 'ray-x/guihua.lua' -- recommended if need floating window support
 
     -- lsp-config
@@ -60,10 +59,10 @@ return require('packer').startup(function(use)
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end
     }
-    use "terrortylor/nvim-comment"
 
+    use "terrortylor/nvim-comment"
     use "kdheepak/lazygit.nvim"
 
-    use "lukas-reineke/indent-blankline.nvim"
+    -- use "lukas-reineke/indent-blankline.nvim"
     -- use 'kkvh/vim-docker-tools'
 end)
