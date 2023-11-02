@@ -1,26 +1,20 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-    -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
     use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.1',
+        'nvim-telescope/telescope.nvim', tag = '0.1.4',
         requires = { {
             'BurntSushi/ripgrep',
             'nvim-lua/plenary.nvim'
         } }
     }
 
-    -- theme
-    -- 6. Base16 family
-    -- use { "rose-pine/neovim" }
-    -- use { "ellisonleao/gruvbox.nvim" }
-    use { "catppuccin/nvim", as = "catppuccin" }
-
+    use { "ellisonleao/gruvbox.nvim" }
 
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
-    -- use('tpope/vim-fugitive')
+
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v1.x',
@@ -29,7 +23,7 @@ return require('packer').startup(function(use)
             { 'neovim/nvim-lspconfig' },           -- Required
             { 'williamboman/mason.nvim' },         -- Optional
             { 'williamboman/mason-lspconfig.nvim' }, -- Optional
-
+            
             -- Autocompletion
             { 'hrsh7th/nvim-cmp' },       -- Required
             { 'hrsh7th/cmp-nvim-lsp' },   -- Required
