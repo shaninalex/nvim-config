@@ -151,22 +151,18 @@ require('lazy').setup({
   },
 
   {
-    "ellisonleao/gruvbox.nvim",
+    "folke/tokyonight.nvim",
+    lazy = false,
     priority = 1000,
-    --[[ config = function()
-      vim.cmd.colorscheme 'gruvbox'
-    end, ]]
-    config = true,
     opts = {
-      italic = {
-        strings = false,
-        emphasis = false,
-        comments = false,
-        operators = false,
-        folds = false,
+      style = 'storm',
+      styles = {
+        comments = { italic = false },
+        keywords = { italic = false },
+        sidebars = "dark", -- style for sidebars, see below
+        floats = "dark", -- style for floating windows
       },
-      contrast = "hard"
-    }
+    },
   },
 
   {
@@ -176,9 +172,9 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'gruvbox',
-        component_separators = { left = '', right = ''},
-        section_separators = { left = '', right = ''},
+        theme = 'tokyonight',
+        component_separators = { left = '', right = '' },
+        section_separators = { left = '', right = '' },
       },
     },
   },
@@ -243,7 +239,7 @@ require('lazy').setup({
 -- [[ Setting options ]]
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
-vim.cmd.colorscheme 'gruvbox'
+vim.cmd.colorscheme 'tokyonight-storm'
 vim.opt.mouse = ''
 
 -- Set highlight on search
@@ -305,7 +301,7 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open float
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- CLIPBOARD
-vim.opt.clipboard="unnamedplus"
+vim.opt.clipboard = "unnamedplus"
 vim.keymap.set("n", "<leader>y", "\"+y") -- copy into system clipboard
 vim.keymap.set("v", "<leader>y", "\"+y")
 vim.keymap.set("n", "<leader>Y", "\"+Y")
