@@ -241,7 +241,22 @@ require('lazy').setup({
     "windwp/nvim-autopairs",
     event = "InsertEnter",
     opts = {}
-  }
+  },
+  {
+    'akinsho/toggleterm.nvim',
+    version = "*",
+    opts = {
+      direction = "horizontal",
+      size = 15,
+      open_mapping = [[<M-t>]]
+    }
+  },
+  {
+    "kdheepak/lazygit.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    }
+  },
 }, {})
 
 vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
@@ -652,6 +667,7 @@ cmp.setup {
   },
 }
 
+vim.keymap.set("n", "<M-g>", "<cmd>LazyGit<cr>")
 
 vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 
