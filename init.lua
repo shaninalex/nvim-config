@@ -354,7 +354,7 @@ vim.keymap.set("v", "<leader>y", "\"+y")
 vim.keymap.set("n", "<leader>Y", "\"+Y")
 
 -- Neotree
-vim.keymap.set("n", "<leader>,", "<cmd>Neotree reveal<cr>")
+vim.keymap.set("n", "<leader>,", "<cmd>Neotree reveal_force_cwd<cr>")
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
