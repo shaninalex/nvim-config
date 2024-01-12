@@ -257,6 +257,28 @@ require('lazy').setup({
       "nvim-lua/plenary.nvim",
     }
   },
+  {
+    "ray-x/go.nvim",
+    dependencies = { -- optional packages
+      "ray-x/guihua.lua",
+      "neovim/nvim-lspconfig",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = function()
+      require("go").setup()
+      local format_sync_grp = vim.api.nvim_create_augroup("GoImport", {})
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        pattern = "*.go",
+        callback = function()
+          require('go.format').goimport()
+        end,
+        group = format_sync_grp,
+      })
+    end,
+    event = { "CmdlineEnter" },
+    ft = { "go", 'gomod' },
+    build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
+  }
 }, {})
 
 vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
@@ -330,6 +352,9 @@ vim.opt.clipboard = "unnamedplus"
 vim.keymap.set("n", "<leader>y", "\"+y") -- copy into system clipboard
 vim.keymap.set("v", "<leader>y", "\"+y")
 vim.keymap.set("n", "<leader>Y", "\"+Y")
+
+-- Neotree
+vim.keymap.set("n", "<leader>,", "<cmd>Neotree reveal<cr>")
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
