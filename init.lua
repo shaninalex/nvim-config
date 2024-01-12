@@ -248,7 +248,7 @@ require('lazy').setup({
     opts = {
       direction = "horizontal",
       size = 15,
-      open_mapping = [[<M-t>]]
+      open_mapping = [[<leader>t]]
     }
   },
   {
@@ -281,7 +281,7 @@ require('lazy').setup({
   }
 }, {})
 
-vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
+-- vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
 
 -- [[ Setting options ]]
 -- See `:help vim.o`
@@ -692,7 +692,7 @@ cmp.setup {
   },
 }
 
-vim.keymap.set("n", "<M-g>", "<cmd>LazyGit<cr>")
+vim.keymap.set("n", "<leader>g", "<cmd>LazyGit<cr>")
 
 vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 
