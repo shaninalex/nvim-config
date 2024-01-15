@@ -165,13 +165,29 @@ require('lazy').setup({
   },
 
   {
+    "ellisonleao/gruvbox.nvim",
+    priority = 1000,
+    config = true,
+    opts = {
+      italic = {
+        strings = false,
+        emphasis = false,
+        comments = false,
+        operators = false,
+        folds = false,
+      },
+      contrast = "hard"
+    }
+  },
+
+  {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
     -- See `:help lualine.txt`
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'tokyonight',
+        theme = 'gruvbox',
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
       },
@@ -248,7 +264,7 @@ require('lazy').setup({
     opts = {
       direction = "horizontal",
       size = 15,
-      open_mapping = [[<leader>t]]
+      open_mapping = [[<M-j>]]
     }
   },
   {
@@ -286,7 +302,7 @@ require('lazy').setup({
 -- [[ Setting options ]]
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
-vim.cmd.colorscheme 'tokyonight-storm'
+vim.cmd.colorscheme 'gruvbox'
 vim.opt.mouse = ''
 
 -- Set highlight on search
@@ -355,6 +371,7 @@ vim.keymap.set("n", "<leader>Y", "\"+Y")
 
 -- Neotree
 vim.keymap.set("n", "<leader>,", "<cmd>Neotree reveal_force_cwd<cr>")
+vim.keymap.set("n", "<leader>.", "<cmd>Neotree close<cr>")
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
