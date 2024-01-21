@@ -398,6 +398,7 @@ require('telescope').setup {
       'node_modules',
       'env',
       'dist',
+      '__pycache__',
     }
   },
 }
