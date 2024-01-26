@@ -715,5 +715,7 @@ vim.keymap.set("n", "<leader>g", "<cmd>LazyGit<cr>")
 
 vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 
+vim.cmd('autocmd BufRead,BufNewFile *.hbs set filetype=html')
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
