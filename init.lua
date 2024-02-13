@@ -187,7 +187,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'gruvbox',
+        theme = 'tokyonight',
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
       },
@@ -264,7 +264,7 @@ require('lazy').setup({
     opts = {
       direction = "horizontal",
       size = 15,
-      open_mapping = [[<M-j>]]
+      -- open_mapping = [[<M-j>]]
     }
   },
   {
@@ -302,7 +302,7 @@ require('lazy').setup({
 -- [[ Setting options ]]
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
-vim.cmd.colorscheme 'gruvbox'
+vim.cmd.colorscheme 'tokyonight-storm'
 vim.opt.mouse = ''
 
 -- Set highlight on search
@@ -399,6 +399,7 @@ require('telescope').setup {
       'node_modules',
       'env',
       'dist',
+      '__pycache__',
       'build',
     }
   },
