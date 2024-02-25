@@ -410,7 +410,9 @@ local servers = {
   -- pyright = {},
   -- rust_analyzer = {},
   -- tsserver = {},
-  -- html = { filetypes = { 'html', 'twig', 'hbs'} },
+
+  -- vim.cmd('autocmd BufRead,BufNewFile *.hbs set filetype=html')
+  html = { filetypes = { 'html', 'twig', 'hbs' } },
 
   lua_ls = {
     Lua = {
@@ -500,7 +502,5 @@ cmp.setup {
 
 
 
+vim.keymap.set("n", "<leader>l", vim.cmd.Ex)
 vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
-
--- vim.cmd('autocmd BufRead,BufNewFile *.hbs set filetype=html')
-
