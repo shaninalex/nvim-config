@@ -38,4 +38,4 @@ vim.opt.tabpagemax = 15
 vim.opt.showtabline = 2
 
 -- [[ Execute on start ]]
-vim.cmd[[colorscheme tokyonight-storm]]
+vim.cmd [[colorscheme tokyonight-storm]]

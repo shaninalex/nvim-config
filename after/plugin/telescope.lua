@@ -1,19 +1,19 @@
 require('telescope').setup {
-  defaults = {
-    mappings = {
-      i = {
-        ['<C-u>'] = false,
-        ['<C-d>'] = false,
-      },
+    defaults = {
+        mappings = {
+            i = {
+                ['<C-u>'] = false,
+                ['<C-d>'] = false,
+            },
+        },
+        file_ignore_patterns = {
+            '__pycache__',  -- python compiled binaries
+            'env',          -- python dependecies env folder
+            'node_modules', -- js libraries
+            'dist',         -- compilled package
+            'build',        -- compilled package
+        }
     },
-    file_ignore_patterns = {
-      '__pycache__',        -- python compiled binaries
-      'env',                -- python dependecies env folder
-      'node_modules',       -- js libraries
-      'dist',               -- compilled package
-      'build',              -- compilled package
-    }
-  },
 }
 
 pcall(require('telescope').load_extension, 'fzf')
@@ -36,5 +36,5 @@ local function telescope_live_grep_open_files()
     prompt_title = 'Live Grep in Open Files',
   }
 end
-]]--
-
+]]
+--
