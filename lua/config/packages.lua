@@ -80,7 +80,7 @@ require('lazy').setup({
         },
     },
     -- [[ show helper window with available keys ]]
-    { 'folke/which-key.nvim', opts = {} },
+    { 'folke/which-key.nvim',  opts = {} },
 
     -- [[ Telescope ]]
     {
@@ -122,6 +122,26 @@ require('lazy').setup({
             'nvim-treesitter/nvim-treesitter-textobjects',
         },
         build = ':TSUpdate',
-    }
+    },
 
+    {
+        "ray-x/go.nvim",
+        dependencies = { -- optional packages
+            "ray-x/guihua.lua",
+            "neovim/nvim-lspconfig",
+            "nvim-treesitter/nvim-treesitter",
+        },
+        event = { "CmdlineEnter" },
+        ft = { "go", 'gomod' },
+        build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
+    },
+
+    {
+        "windwp/nvim-autopairs",
+        event = "InsertEnter",
+        opts = {}
+    },
+
+    -- "gc" to comment visual regions/lines
+    { 'numToStr/Comment.nvim', opts = {} },
 })

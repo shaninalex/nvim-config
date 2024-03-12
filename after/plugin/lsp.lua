@@ -45,7 +45,7 @@ local on_attach = function(_, bufnr)
     end, { desc = 'Format current buffer with LSP' })
 end
 
--- document existing key chains
+--[[ document existing key chains
 require('which-key').register {
     ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
     ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
@@ -56,6 +56,8 @@ require('which-key').register {
     ['<leader>t'] = { name = '[T]oggle', _ = 'which_key_ignore' },
     ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
 }
+]]
+   --
 -- register which-key VISUAL mode
 -- required for visual <leader>hs (hunk stage) to work
 require('which-key').register({
