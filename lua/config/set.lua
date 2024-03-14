@@ -36,6 +36,3 @@ vim.opt.colorcolumn = "80"
 -- tabs
 vim.opt.tabpagemax = 15
 vim.opt.showtabline = 2
-
--- [[ Execute on start ]]
-vim.cmd [[colorscheme tokyonight-storm]]

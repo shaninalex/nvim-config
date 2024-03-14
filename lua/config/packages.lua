@@ -17,7 +17,12 @@ require('lazy').setup({
         "folke/tokyonight.nvim",
         lazy = false,
         priority = 1000,
-        opts = {},
+    },
+
+    {
+        -- Theme inspired by Atom
+        'navarasu/onedark.nvim',
+        priority = 1000,
     },
 
     -- [[ bottom status bar ]]
