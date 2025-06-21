@@ -1,7 +1,4 @@
-require("config/packages")
-
--- execute it after setting and starting packages
+require("config/plugins")
 require("config/set")
+require("config/chunks")
 require("config/remaps")
-require("config/helpers")
-require("config/cmd")

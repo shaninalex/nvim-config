@@ -1,3 +1,4 @@
+
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
@@ -30,9 +31,27 @@ vim.opt.scrolloff = 8
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "120"
 
 
 -- tabs
 vim.opt.tabpagemax = 15
 vim.opt.showtabline = 2
+
+--[[
+    Clipboard
+    required to install xclip ( for debian ):
+    $ sudo apt install xclip
+    Without this thing copy/paste for system clipboard does not work
+]]
+--
+vim.opt.clipboard = "unnamedplus"
+
+-- Set highlight on search, but clear on pressing <Esc> in normal mode
+vim.opt.hlsearch = true
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+
+-- Set colorscheme
+vim.cmd[[colorscheme tokyonight-day]]
+
+
