@@ -3,7 +3,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 vim.opt.guicursor = ""
-vim.o.mouse = ""
+-- vim.o.mouse = ""
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -52,6 +52,6 @@ vim.opt.hlsearch = true
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Set colorscheme
-vim.cmd[[colorscheme tokyonight-day]]
+vim.cmd[[colorscheme tokyonight]]
 
 
