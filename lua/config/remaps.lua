@@ -12,7 +12,7 @@ vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower win
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
 -- Fix anoying copy paste default logic
-vim.keymap.set("x", "<leader>p", "\"_dP")
+vim.keymap.set("x", "<leader>p", '"_dP')
 
 -- Do not lose selection after tab/untab selected lines
 vim.keymap.set("v", "<Tab>", ">gv")
@@ -21,3 +21,9 @@ vim.keymap.set("v", "<S-Tab>", "<gv")
 -- move selected lines up/down (with indent)
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+-- Lazygit
+vim.keymap.set("n", "<leader>lg", "<cmd>LazyGit<cr>")
+
+-- Neotree
+vim.keymap.set("n", "<leader>q", "<cmd>Neotree toggle<cr>")
