@@ -162,4 +162,10 @@ require("lazy").setup({
 			"nvim-lua/plenary.nvim",
 		},
 	},
+
+	{
+		"akinsho/toggleterm.nvim",
+		version = "*",
+		opts = require("config.plugins.toggleterm").opts,
+	},
 })
