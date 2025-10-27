@@ -17,11 +17,22 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	{
-		"folke/tokyonight.nvim",
+		"sainnhe/everforest",
 		lazy = false,
 		priority = 1000,
-		opts = {},
+		opts = {
+			enable_italic = false,
+			background = "hard",
+		},
+		config = function() end,
 	},
+
+	-- {
+	-- 	"folke/tokyonight.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	opts = {},
+	-- },
 
 	-- Highlight, edit, and navigate code
 	{

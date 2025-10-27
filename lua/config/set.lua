@@ -1,12 +1,11 @@
-
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 vim.opt.guicursor = ""
 -- vim.o.mouse = ""
 
 vim.opt.nu = true
-vim.opt.relativenumber = true
+-- vim.opt.relativenumber = true
 
 -- 4 space indent
 vim.opt.tabstop = 4
@@ -33,7 +32,6 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 vim.opt.colorcolumn = "120"
 
-
 -- tabs
 vim.opt.tabpagemax = 15
 vim.opt.showtabline = 2
@@ -52,6 +50,4 @@ vim.opt.hlsearch = true
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Set colorscheme
-vim.cmd[[colorscheme tokyonight]]
-
-
+vim.cmd([[colorscheme everforest]])
