@@ -26,4 +26,5 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "<leader>lg", "<cmd>LazyGit<cr>")
 
 -- Neotree
-vim.keymap.set("n", "<leader>q", "<cmd>Neotree toggle<cr>")
+vim.keymap.set("n", "<leader>]", "<cmd>Neotree toggle<cr>")
+vim.keymap.set("n", "<leader>[", "<cmd>Neotree focus<cr>")
