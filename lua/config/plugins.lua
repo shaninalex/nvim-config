@@ -17,10 +17,21 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	{
-		"sainnhe/everforest",
+		"neanias/everforest-nvim",
 		lazy = false,
 		priority = 1000,
+		opts = {
+			background = "hard",
+			italics = false,
+			disable_italic_comments = true,
+			ui_contrast = true,
+		},
+		config = function()
+			vim.cmd("colorscheme everforest")
+		end,
 	},
+
+	-- Golang support
 	{
 		"ray-x/go.nvim",
 		dependencies = { -- optional packages
@@ -43,13 +54,6 @@ require("lazy").setup({
 		ft = { "go", "gomod" },
 		build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
 	},
-
-	-- {
-	-- 	"folke/tokyonight.nvim",
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- 	opts = {},
-	-- },
 
 	-- Highlight, edit, and navigate code
 	{
