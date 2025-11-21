@@ -49,19 +49,6 @@ require("lazy").setup({
 		end,
 	},
 
-	-- NEOTREE
-	{
-		"nvim-neo-tree/neo-tree.nvim",
-		branch = "v3.x",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons",
-			"MunifTanjim/nui.nvim",
-		},
-		lazy = false,
-		opts = require("config.plugins.neotree").opts,
-	},
-
 	{
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
