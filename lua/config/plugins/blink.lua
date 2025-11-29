@@ -4,7 +4,7 @@ M.opts = {
 	keymap = {
 		["<C-j>"] = { "select_prev", "fallback" },
 		["<C-k>"] = { "select_next", "fallback" },
-		["<Tab>"] = { "accept", "fallback" },
+		["<Enter>"] = { "accept", "fallback" },
 		["<Esc>"] = { "hide", "fallback" },
 	},
 	appearance = {

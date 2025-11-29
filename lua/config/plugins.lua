@@ -27,55 +27,12 @@ require("lazy").setup({
 			require("onedark").load()
 		end,
 	},
-
-	-- Nvim dap go
 	{
-		"mfussenegger/nvim-dap",
-		dependencies = {
-			"leoluz/nvim-dap-go",
-			"rcarriga/nvim-dap-ui",
-			"theHamsta/nvim-dap-virtual-text",
-			"nvim-neotest/nvim-nio",
-			"williamboman/mason.nvim",
-		},
-		config = function()
-			local dap = require("dap")
-			local ui = require("dapui")
-
-			require("dapui").setup()
-			require("dap-go").setup()
-
-			vim.keymap.set("n", "<space>b", dap.toggle_breakpoint)
-			vim.keymap.set("n", "<space>gb", dap.run_to_cursor)
-
-			-- Eval var under cursor
-			vim.keymap.set("n", "<space>?", function()
-				require("dapui").eval(nil, { enter = true })
-			end)
-
-			vim.keymap.set("n", "<F1>", dap.continue)
-			vim.keymap.set("n", "<F2>", dap.step_into)
-			vim.keymap.set("n", "<F3>", dap.step_over)
-			vim.keymap.set("n", "<F4>", dap.step_out)
-			vim.keymap.set("n", "<F5>", dap.step_back)
-			vim.keymap.set("n", "<F6>", dap.restart)
-
-			dap.listeners.before.attach.dapui_config = function()
-				ui.open()
-			end
-			dap.listeners.before.launch.dapui_config = function()
-				ui.open()
-			end
-			dap.listeners.before.event_terminated.dapui_config = function()
-				ui.close()
-			end
-			dap.listeners.before.event_exited.dapui_config = function()
-				ui.close()
-			end
-		end,
+		"ellisonleao/gruvbox.nvim",
+		priority = 1000,
+		config = true,
 	},
 
-	-- Golang support
 	{
 		"ray-x/go.nvim",
 		dependencies = { -- optional packages
@@ -120,17 +77,16 @@ require("lazy").setup({
 		end,
 	},
 
-	-- NEOTREE
 	{
 		"nvim-neo-tree/neo-tree.nvim",
 		branch = "v3.x",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons",
 			"MunifTanjim/nui.nvim",
+			"nvim-tree/nvim-web-devicons", -- optional, but recommended
 		},
-		lazy = false,
-		opts = require("config.plugins.neotree").opts,
+		lazy = false, -- neo-tree will lazily load itself
+		opts = require("config/plugins/neotree").opts,
 	},
 
 	{
@@ -230,18 +186,5 @@ require("lazy").setup({
 			"folke/lazydev.nvim",
 		},
 		opts = require("config.plugins.blink").opts,
-	},
-
-	{
-		"kdheepak/lazygit.nvim",
-		requires = {
-			"nvim-lua/plenary.nvim",
-		},
-	},
-
-	{
-		"akinsho/toggleterm.nvim",
-		version = "*",
-		opts = require("config.plugins.toggleterm").opts,
 	},
 })
