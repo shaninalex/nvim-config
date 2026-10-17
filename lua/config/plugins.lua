@@ -59,21 +59,32 @@ require("lazy").setup({
 	-- Highlight, edit, and navigate code
 	{
 		"nvim-treesitter/nvim-treesitter",
+		branch = "main",
+		lazy = false, -- main branch does not support lazy-loading
 		build = ":TSUpdate",
-		opts = {
-			ensure_installed = { "go", "typescript", "python", "bash", "html", "lua", "luadoc", "markdown" },
-			auto_install = true,
-			highlight = { enable = true },
-			indent = { enable = true },
-		},
-		config = function(_, opts)
-			-- Prefer git instead of curl in order to improve connectivity in some environments
-			require("nvim-treesitter.install").prefer_git = true
-			---@diagnostic disable-next-line: missing-fields
-			require("nvim-treesitter.configs").setup(opts)
-			--    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
-			--    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
-			--    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+		config = function()
+			local ts = require("nvim-treesitter")
+			ts.install({ "go", "typescript", "python", "bash", "html", "lua", "luadoc", "markdown", "odin" })
+
+			-- highlight + indent for any filetype with an available parser
+			vim.api.nvim_create_autocmd("FileType", {
+				group = vim.api.nvim_create_augroup("treesitter-start", { clear = true }),
+				callback = function(args)
+					local lang = vim.treesitter.language.get_lang(vim.bo[args.buf].filetype)
+					if not lang then
+						return
+					end
+					-- auto-install missing parsers that nvim-treesitter knows about
+					if not vim.treesitter.language.add(lang) then
+						if vim.tbl_contains(ts.get_available(), lang) then
+							ts.install({ lang })
+						end
+						return
+					end
+					vim.treesitter.start(args.buf, lang)
+					vim.bo[args.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+				end,
+			})
 		end,
 	},
 
